@@ -1,3 +1,13 @@
+<?php
+require_once "class/Brand.php";
+require_once "class/Product.php";
+
+$prod = new Product();
+$get_all = $prod->fetch_all_account_type();
+
+$brad = new Brand();
+$get_brand = $brad->fetch_all_brands();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +31,26 @@
           </li>
           <li class="nav-item">
             <a class="nav-link fw-bold " href="about.php">About Us</a>
-          </li>          
-          <li class="nav-item">
-            <a class="nav-link fw-bold" href="product.php">Products</a>
-          </li>        
+          </li> 
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold" href="product.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+          
+            
+
+            
+                  <?php foreach($get_brand as $value) { ?>
+                    
+                    <li> <a class="dropdown-item"  href="Product.php?id=<?php echo $value['brand_id'];?>">
+                        <?php echo $value['brand_name'];  ?>
+                    </a></li>
+                  
+                <?php } ?>  
+          
+          </ul>
+        </li>       
         </ul>
       </div>
     </div>

@@ -22,8 +22,21 @@ class Product extends Db
     $category = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $category;
   }
+
+  public function fetch_prod_by_brand($brand_id)
+  {
+
+ 
+
+    $sql = "SELECT * FROM products where brand_id = ?";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->bindParam(1, $brand_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $prodbrand = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $prodbrand;
+  }
 }
 
 $prod = new Product();
-//$prod->add_product('hp2534', 'durable laptop you will enjoy', 750000);
+// $prod->fetch_prod_by_brand(1);
 ?>

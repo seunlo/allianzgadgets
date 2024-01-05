@@ -10887,4 +10887,11 @@ textarea.form-control-lg {
   width: 100%;
 }
 
+.card_hover:hover{
+  box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75) !important;
+  -webkit-box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75) !important;
+  transition: 0.5s !important;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
