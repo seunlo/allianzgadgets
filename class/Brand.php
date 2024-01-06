@@ -2,7 +2,7 @@
 require_once "Db.php";
 class Brand extends Db
 {
-  public function add_product($brand_name, $brand_image)
+  public function add_brand($brand_name, $brand_image)
   {
     $sql = "INSERT INTO brands(brand_name, brand_image) VALUES(?, ?)";
     $stmt = $this->connect()->prepare($sql);

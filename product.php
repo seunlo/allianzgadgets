@@ -38,7 +38,11 @@ $get_all = $prod->fetch_all_account_type();
                 <?php } 
 
             }else{
-                  echo "<h1> Product is not available </h1>";
+                  echo 
+                  "<script>
+                  alert('Product is not available');
+                  window.location.href='index.php';
+                  </script>";
             }
 
           }else{

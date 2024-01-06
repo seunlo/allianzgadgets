@@ -5,6 +5,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10875,23 +10876,6 @@ textarea.form-control-lg {
   }
 }
 
-.pointer_class{
-  cursor: pointer;
-}
 
-.dash_main{
-  background: url(./images/abt.jpeg)no-repeat;
-  background-size: cover;
-  height: 100vh;
-  background-position: 50% 50%;
-  width: 100%;
-}
-
-.card_hover:hover{
-  box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75) !important;
-  -webkit-box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75) !important;
-  -moz-box-shadow: -2px -1px 25px -4px rgba(0, 0, 0, 0.75) !important;
-  transition: 0.5s !important;
-}
 
 /*# sourceMappingURL=bootstrap.css.map */

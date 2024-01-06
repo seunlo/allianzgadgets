@@ -1,6 +1,15 @@
 <?php 
 include "partials/header.php";
  require_once "class/Product.php";
+ require_once "class/Brand.php";
+
+
+ $brad = new Brand();
+$get_brand = $brad->fetch_all_brands();
+// echo "<pre>";
+// print_r($get_brand);
+// exit();
+
 
  if (isset($_POST["submit_btn"])) {
   $prod_name = $_POST['prodname'];
@@ -9,9 +18,10 @@ include "partials/header.php";
   $targetDirectory = "uploads/";
   $prod_image = $targetDirectory . basename($_FILES['prodimg']['name']);
   move_uploaded_file($_FILES['prodimg']['tmp_name'], $prod_image);
+  $brand_id = $_POST['prod_brand'];
 
   $prod = new Product();
-  $prod->add_product($prod_name, $prod_desc, $prod_amt, $prod_image);
+  $prod->add_product($prod_name, $prod_desc, $prod_amt, $prod_image, $brand_id);
 
 }
 ?>
@@ -34,14 +44,20 @@ include "partials/header.php";
     <div>
       <label for="prodimg">Product Image</label>
       <input type="file" name="prodimg" class="form-control mb-3">
-    </div>    
+    </div>
+    <select name="prod_brand" class="form-select text-dark mb-3">
+      <option value="">Select Product Brand</option>
+      <?php foreach ($get_brand as $key) { ?>
+        <option value="<?php echo $key['brand_id']; ?>">
+          <?php echo $key['brand_name']; ?>
+        </option>
+      <?php } ?>
+    </select>     
     <div>
       <input type="submit" class="btn btn-danger w-100" value="Click here to Add" name="submit_btn">
     </div>
   </form>
   </div>
 </div>
-
-
 
 <?php include "partials/footer.php"; ?>
